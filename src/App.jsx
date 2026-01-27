@@ -40,7 +40,7 @@ function App() {
   const [pagination, setPagination] = useState({});
 
   // useRef 建立對 DOM 元素的參照
-  const productModalRef = useRef('');
+  const productModalRef = useRef(null);
 
   const handleInputChange = (e) =>{
     const {name, value} = e.target;
