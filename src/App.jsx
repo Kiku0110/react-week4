@@ -115,10 +115,8 @@ function App() {
         text: "已修改完成",
         icon: "success"
       });
-    }else{
-      Swal.fire("成功建立商品！");
     }
-
+    
     const productData = {
       //改變初始化資料的型態(字串轉數字)
       //避免 imagesUrl 傳空字串
@@ -135,6 +133,9 @@ function App() {
     try {
       // eslint-disable-next-line no-unused-vars
       const response = await axios[method](url, productData)
+      if(method === "post"){
+        Swal.fire("成功建立商品！");
+      }
       getProducts();
       closeModal();
     } catch (error) {
